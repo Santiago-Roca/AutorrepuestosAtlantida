@@ -1,0 +1,11 @@
+@mixin tamaño($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin filaPropiedades($width, $align: false) {
+    width: $width;
+    @if ($align) {
+        align-items: center;
+    }
+}

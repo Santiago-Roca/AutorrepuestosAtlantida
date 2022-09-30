@@ -1,0 +1,20 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1200px) {
+    body {
+        background: url(https://fondosmil.com/fondo/13559.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    main {
+        width: 80%;
+        margin: 0px auto;
+    }
+}

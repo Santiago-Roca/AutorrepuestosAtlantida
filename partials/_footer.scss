@@ -1,0 +1,57 @@
+/* FOOTER */
+
+footer {
+    background-image: map-get($estilos, colorFooter);
+    color: #fff;
+    font-family: "Courier New", Courier, monospace;
+
+    h5 {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+}
+
+.box-whatsapp {
+    @include tamaño($width: 60px, $height: 60px);
+
+    img {
+        height: 100%;
+    }
+}
+
+.box-redes {
+    width: 50%;
+
+    .box-twitter,
+    .box-instagram,
+    .box-facebook {
+        height: 30px;
+
+        img {
+            @extend %imagenContain;
+        }
+    }
+}
+
+@media screen and (min-width: 575px){
+    .box-redes{
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .box-redes{
+        width: 60%;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .seccion-footer {
+        width: 80%;
+    }
+}
