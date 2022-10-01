@@ -3,7 +3,8 @@
 footer {
     background-image: map-get($estilos, colorFooter);
     color: #fff;
-    font-family: "Courier New", Courier, monospace;
+    // font-family: "Courier New", Courier, monospace;
+    font-family: map-get($estilos, fuentePrincipal);
 
     h5 {
         font-size: 1.3rem;
@@ -37,21 +38,20 @@ footer {
     }
 }
 
-@media screen and (min-width: 575px){
-    .box-redes{
+@media screen and (min-width: 575px) {
+    .box-redes {
         width: 30%;
     }
 }
 
-@media screen and (min-width: 767px){
-    .box-redes{
-        width: 60%;
+@media screen and (min-width: 767px) {
+    .box-redes {
+        width: 40%;
     }
 }
 
-
 @media screen and (min-width: 1200px) {
     .seccion-footer {
-        width: 80%;
+        // width: 80%;
     }
 }
