@@ -82,6 +82,29 @@ header .fila-header {
     font-size: 2.3rem;
   }
 }
+.seccion-index {
+  width: 90%;
+  align-items: center;
+}
+
+.fila-form {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.listado {
+  justify-content: center;
+}
+
+.lista-titulos {
+  font-weight: bold;
+}
+
+.menu {
+  border: 2px solid #464852;
+  width: 85%;
+}
+
 .imagenCard {
   border-radius: 15px;
 }

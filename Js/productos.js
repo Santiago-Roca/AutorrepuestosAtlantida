@@ -1,184 +1,297 @@
+const listaProductos = []
+const listaCategoria = ['Frenos', 'Neumaticos', 'Baterias', 'Limpieza']
 
-const suma = (a, b) => a + b
-let total = 0;
-let carrito = ''
-let seguirComprando = true
-
-while (seguirComprando) {
-    let opcion = prompt("Seleccione una categoría de la lista para iniciar su compra:" + '\n' + '\n' + "1- Frenos" + '\n' + "2-Neumáticos" + '\n' + "3-Baterias" + '\n' + "4-Productos de limpieza" + '\n' + "5-Ver carrito de compras" + '\n' + "6-Salir / Finalizar compras")
-    let control = false
-    switch (opcion) {
-        case '1':
-            while (!control) {
-                let valor = prompt("Seleccione una opción para agreagar al carrito de compras:" + '\n' + '\n' + "1-Frenos de disco de 150mm - $1200" + '\n' + "2-Frenos de disco de 180mm - $1400" + '\n' + "3-Frenos de disco de 250mm - $1600" + '\n' + "4-Frenos de disco de 310mm - $1900" + '\n' + "5-Volver al menú principal")
-                switch (valor) {
-                    case '1':
-                        alert("Frenos de disco de 150mm - $1200 / AGREGADO")
-                        carrito = carrito + '\n' + "Frenos de disco de 150mm - $1200"
-                        total = suma(total, 1200)
-                        control = true
-                        break
-                    case '2':
-                        alert("Frenos de disco de 180mm - $1400 / AGREGADO")
-                        carrito = carrito + '\n' + "Frenos de disco de 180mm - $1400"
-                        total = suma(total, 1400)
-                        control = true
-                        break
-                    case '3':
-                        alert("Frenos de disco de 250mm - $1600 / AGREGADO")
-                        carrito = carrito + '\n' + "Frenos de disco de 250mm - $1600"
-                        total = suma(total, 1600)
-                        control = true
-                        break
-                    case '4':
-                        alert("Frenos de disco de 310mm - $1900 / AGREGADO")
-                        carrito = carrito + '\n' + "Frenos de disco de 310mm - $1900"
-                        total = suma(total, 1900)
-                        control = true
-                        break
-                    case '5':
-                        control = true
-                        break
-                    default:
-                        alert("El valor ingresado es incorrecto")
-                        control = false
-                }
-            }
-
-            break
-
-        case '2':
-            while (!control) {
-                let valor = prompt("Seleccione una opción para agreagar al carrito de compras:" + '\n' + '\n' + "1-Neumaticos rodado 13 - $2100" + '\n' + "2-Neumaticos rodado 14 - $2300" + '\n' + "3-Neumaticos rodado 15 - $2500" + '\n' + "4-Neumaticos rodado 16 - $2800" + '\n' + "5-Volver al menú principal")
-                switch (valor) {
-                    case '1':
-                        alert("Neumaticos rodado 13 - $2100 / AGREGADO")
-                        carrito = carrito + '\n' + "Neumaticos rodado 13 - $2100"
-                        total = suma(total, 2100)
-                        control = true
-                        break
-                    case '2':
-                        alert("Neumaticos rodado 14 - $2300 / AGREGADO")
-                        carrito = carrito + '\n' + "Neumaticos rodado 14 - $2300"
-                        total = suma(total, 2300)
-                        control = true
-                        break
-                    case '3':
-                        alert("Neumaticos rodado 15 - $2500 / AGREGADO")
-                        carrito = carrito + '\n' + "Neumaticos rodado 15 - $2500"
-                        total = suma(total, 2500)
-                        control = true
-                        break
-                    case '4':
-                        alert("Neumaticos rodado 16 - $2800 / AGREGADO")
-                        carrito = carrito + '\n' + "Neumaticos rodado 16 - $2800"
-                        total = suma(total, 2800)
-                        control = true
-                        break
-                    case '5':
-                        control = true
-                        break
-                    default:
-                        alert("El valor ingresado es incorrecto")
-                        control = false
-                }
-            }
-            break
-
-        case '3':
-            while (!control) {
-                let valor = prompt("Seleccione una opción para agreagar al carrito de compras:" + '\n' + '\n' + "1-Batería de 45 amp - $4800" + '\n' + "2-Batería de 60 amp - $6400" + '\n' + "3-Batería de 75 amp - $9200" + '\n' + "4-Volver al menú principal")
-                switch (valor) {
-                    case '1':
-                        alert("Batería de 45 amp - $4800 / AGREGADO")
-                        carrito = carrito + '\n' + "Batería de 45 amp - $4800"
-                        total = suma(total, 4800)
-                        control = true
-                        break
-                    case '2':
-                        alert("Batería de 60 amp - $6400 / AGREGADO")
-                        carrito = carrito + '\n' + "Batería de 60 amp - $6400"
-                        total = suma(total, 6400)
-                        control = true
-                        break
-                    case '3':
-                        alert("Batería de 75 amp - $9200 / AGREGADO")
-                        carrito = carrito + '\n' + "Batería de 75 amp - $9200"
-                        total = suma(total, 9200)
-                        control = true
-                        break
-                    case '4':
-                        control = true
-                        break
-                    default:
-                        alert("El valor ingresado es incorrecto")
-                        control = false
-                }
-            }
-            break
-
-
-        case '4':
-            while (!control) {
-                let valor = prompt("Seleccione una opción para agreagar al carrito de compras:" + '\n' + '\n' + "1-Shampoo espuma - $480" + '\n' + "2-Limpia parabrisas - $230" + '\n' + "3-Cera al agua - $320" + '\n' + "4-Cepillos y trapo de secado - $550" + '\n' + "5-Volver al menú principal")
-                switch (valor) {
-                    case '1':
-                        alert("Shampoo espuma - $480 / AGREGADO")
-                        carrito = carrito + '\n' + "Shampoo espuma - $480"
-                        total = suma(total, 480)
-                        control = true
-                        break
-                    case '2':
-                        alert("Limpia parabrisas - $230 / AGREGADO")
-                        carrito = carrito + '\n' + "Limpia parabrisas - $230"
-                        total = suma(total, 230)
-                        control = true
-                        break
-                    case '3':
-                        alert("Cera al agua - $320 / AGREGADO")
-                        carrito = carrito + '\n' + "Cera al agua - $320"
-                        total = suma(total, 320)
-                        control = true
-                        break
-                    case '4':
-                        alert("Cepillos y trapo de secado - $550 / AGREGADO")
-                        carrito = carrito + '\n' + "Cepillos y trapo de secado - $550"
-                        total = suma(total, 550)
-                        control = true
-                        break
-                    case '5':
-                        control = true
-                        break
-                    default:
-                        alert("El valor ingresado es incorrecto")
-                        control = false
-                }
-            }
-            break
-
-
-        case '5':
-            if (carrito == '') {
-                alert("Su carrito de compras está vacío.")
-
-            } else {
-                alert("Su carrito de compras tiene: " + '\n' + carrito)
-            } break
-
-
-        case '6':
-            seguirComprando = false
-            break
-
-
-        default:
-            alert("El valor ingresado es incorrecto")
-            break
+//Clase Producto
+class Producto {
+    constructor(categoria, id, marca, precio) {
+        this.categoria = categoria;
+        this.id = id;
+        this.marca = marca;
+        this.precio = precio;
     }
 
+    //Nuevo Producto
+    nuevoProducto() {
+        let control = false;
+        while (!control) {
+            let opcion = prompt('Ingresar datos del Producto \n \nSelecione una categoría de la lista: \n\n' + mostrarCategorias(listaCategoria));
+            switch (opcion) {
+                case '1':
+                    this.categoria = 0;
+                    control = true;
+                    break
+
+                case '2':
+                    this.categoria = 1;
+                    control = true;
+                    break
+
+                case '3':
+                    this.categoria = 2;
+                    control = true;
+                    break
+
+                case '4':
+                    this.categoria = 3;
+                    control = true;
+                    break
+
+                default:
+                    alert("El valor ingresado es incorrecto")
+                    control = false;
+            }
+        }
+
+        this.id = validarID(listaProductos)
+        this.marca = validarTexto('marca')
+        this.precio = validarNumero('precio')
+
+        let producto = new Producto(this.categoria, this.id, this.marca, this.precio);
+        return producto;
+    }
 }
 
-if (carrito != '') {
-    alert("Su carrito de compras tiene: " + '\n' + carrito + '\n' + '\n' + "El costo total por los productos seleccionados es: $" + total)
+//Menú Principal
+function menuPrincipal() {
+    let seguirComprando = true;
+    while (seguirComprando) {
+        let opcion = prompt('Bienvenidos a Autorrepuestos Atlántida, que le gustaría hacer: \n \n 1-Ingresar un Producto \n 2-Ver productos Ingresados \n 3-Ordenar Productos \n 4-Eliminar un producto \n 5-Salir')
+        switch (opcion) {
+            case '1':
+                agregarProducto(listaProductos)
+                break
+
+            case '2':
+                mostrarProductos(listaProductos)
+                break
+
+            case '3':
+                ordenarProductos(listaProductos)
+                break
+
+            case '4':
+                eliminarProducto(listaProductos)
+                break
+
+            case '5':
+                seguirComprando = false;
+                break
+        }
+    }
 }
 
+//Agregar Producto
+function agregarProducto(lista) {
+    let producto = new Producto()
+    lista.push(producto.nuevoProducto());
+    alert('Producto agregado correctamente!')
+}
+
+//Mostrar Categorías
+function mostrarCategorias(lista) {
+    let resultado = ''
+    lista.forEach((elemento, index) => {
+        resultado += (index + 1) + '- ' + elemento + '\n'
+    })
+    return resultado;
+}
+
+//Mostrar lista de Productos 
+function mostrarProductos(lista) {
+    if (lista.length >= 1) {
+        let resultado = ''
+        let total = 0;
+        lista.forEach((elemento, index) => {
+            resultado += 'Producto ' + (index + 1) + ':\n\n' + 'ID: ' + elemento.id + '\n' +
+                'Marca: ' + elemento.marca + '\n' +
+                'Categoria: ' + listaCategoria[elemento.categoria] + '\n' +
+                'Precio: $ ' + elemento.precio + '\n \n'
+            total += parseInt(elemento.precio);
+        })
+        resultado = resultado + 'Total: $' + total;
+        alert(resultado);
+    } else {
+        alert('No hay productos ingresados!')
+    }
+}
+
+
+//Menú ordenar productos:
+function ordenarProductos(lista) {
+    if (lista.length >= 1) {
+        let opcion = prompt('Elija el criterio por el cual le gustaría ordenar: \n \n 1- Ordenar por precio (de menor a mayor) \n 2- Ordenar por categoria \n')
+        switch (opcion) {
+            case '1':
+                mostrarProductos(ordenarPorPrecio(listaProductos))
+                break
+
+            case '2':
+                mostrarProductos(ordenarPorCategoria(listaProductos))
+                break
+
+            case '3':
+                break
+        }
+    } else {
+        alert('No hay productos ingresados!')
+    }
+}
+
+//Ordenar por precio
+function ordenarPorPrecio(lista) {
+    const arrayPorPrecio = lista.slice();
+    arrayPorPrecio.sort((a, b) => {
+        if (a.precio > b.precio) {
+            return 1;
+        } else if (a.precio < b.precio) {
+            return -1;
+        } else {
+            return 0;
+        }
+    })
+    return arrayPorPrecio;
+}
+
+//Ordenar por Categoría
+function ordenarPorCategoria(lista) {
+    const arrayPorCategoria = lista.slice();
+    arrayPorCategoria.sort((a, b) => {
+        if (a.categoria > b.categoria) {
+            return 1;
+        } else if (a.categoria < b.categoria) {
+            return -1;
+        } else {
+            return 0;
+        }
+    })
+    return arrayPorCategoria;
+}
+
+
+//Buscar producto
+function buscarProducto(lista, valor) {
+    return lista.find((elemento) =>
+        elemento.id == valor
+    )
+}
+
+//Eliminar un producto
+function eliminarProducto(lista) {
+    if (lista.length >= 1) {
+        let resultado = ''
+        lista.forEach((elemento, index) => {
+            resultado += 'Producto ' + (index + 1) + ':\n' + 'Marca: ' + elemento.marca + ' - Precio: $ ' + elemento.precio + ' - Cat: ' + listaCategoria[elemento.categoria] + ' - ID: ' + elemento.id + '\n \n'
+        })
+        let opcion = prompt('¿Qué producto desea eliminar? \n \n' + resultado + '(Ingrese el ID del producto a eliminar)')
+        let continuar = true;
+
+        let producto = buscarProducto(listaProductos, opcion);
+
+        while (continuar) {
+            if (producto != undefined) {
+                let valor = (prompt('¿Desea eliminar este producto? \n\n Marca: ' + producto.marca + ' - Precio: $ ' + producto.precio + ' - ID: ' + producto.id + '\n\n ** Ingresar SI / NO **')).toUpperCase()
+                if (valor == 'SI') {
+                    lista.splice(lista.indexOf(producto), 1);
+                    alert("Producto eliminado correctamente!")
+                    if (lista.length >= 1) {
+                        mostrarProductos(lista)
+                    }
+                    continuar = false;
+
+                } else if (valor == 'NO') {
+                    continuar = false;
+                    alert('NO se ha eliminado el producto con ID: ' + opcion)
+
+                } else {
+                    alert('Debe ingresar una opcion correcta!')
+                }
+
+            } else {
+                alert("El producto con ID: " + opcion + ' no existe!')
+                continuar = false;
+            }
+        }
+
+    } else {
+        alert('No hay productos ingresados!')
+    }
+}
+
+
+//VALIDAR TEXTO:
+function validarTexto(item) {
+    let resultado = true;
+    let texto;
+    while (resultado) {
+        texto = prompt('Ingrese la ' + item + ' de su producto')
+        if (campoVacio(texto)) {
+            alert('Debes ingresar una ' + item + '!')
+        } else {
+            resultado = false;
+        }
+    }
+    return texto;
+}
+
+
+// VALIDAR INGRESO DE NÚMERO
+function validarNumero(item) {
+    let resultado = true;
+    let numero;
+    while (resultado) {
+        numero = prompt('Ingrese el ' + item + ' de su producto:')
+        resultado = isNaN(numero)
+        if (resultado || campoVacio(numero)) {
+            alert("Debes ingresar un número," + ' " ' + numero + ' " ' + " no es un valor correcto!")
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+    }
+    return parseInt(numero);
+}
+
+// VALIDAR ID
+function validarID(lista) {
+    let resultado = true;
+    let numero;
+    while (resultado) {
+        numero = prompt('Ingrese el ID de su producto:')
+        resultado = isNaN(numero)
+        if (resultado || campoVacio(numero)) {
+            alert("Debes ingresar un número," + ' " ' + numero + ' " ' + " no es un valor correcto!")
+            resultado = true;
+        } else if (!valorUnico(lista, numero)) {
+            alert("Debes ingresar un número único. El ID: " + numero + " ya existe!")
+            resultado = true;
+        } else {
+            resultado = false;
+        }
+    }
+    return parseInt(numero);
+}
+
+//VALIDAR ID ÚNICO
+function valorUnico(lista, numero) {
+    let unico = true;
+    if (lista.length >= 1) {
+        lista.forEach(item => {
+            if (item.id == numero) {
+                unico = false;
+            }
+        })
+    }
+    return unico;
+}
+
+//CAMPO VACIO
+function campoVacio(dato) {
+    if (dato == '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+menuPrincipal()

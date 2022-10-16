@@ -40,7 +40,7 @@
                             <div class="boxNav collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav w-100">
                                     <li class="nav-item">
-                                        <a href="./index.html">Productos</a>
+                                        <a href="./index.html">Menú Principal</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="./paginas/frenos.html">Frenos</a>
@@ -95,122 +95,141 @@
             </div>
         </div>
 
-        <!-- SECCION MEDIO  -->
-        <section class="container seccion-medio mt-md-3 text-center gx-0">
+        <section class="container seccion-medio mt-md-4 text-center menu">
 
-            <h1 class="pt-4 pt-md-3 pb-3 pb-md-3 pb-lg-0 pb-xl-4">Lista de Productos</h1>
+            <!-- Agregar Producto -->
+            <h4 class="py-3 mt-3">Ingresar un producto</h4>
+            <section class="border p-3 seccion-index mx-auto">
 
-            <div class="row g-5 mb-5">
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p3.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Neumático Michelín Rodado 13</h4>
-                            <h5>Neumáticos</h5>
-                            <p class="card-text text-center">$5600</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+                <form class="row g-3 fila-form pb-2">
+
+                    <div class="col-md-1">
+                        <label for="inputID" class="form-label">ID:</label>
+                        <input type="text" class="form-control" id="inputID">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputDescripcion" class="form-label">Descripción:</label>
+                        <input type="text" class="form-control" id="inputDescripcion">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputMarca" class="form-label">Marca:</label>
+                        <input type="text" class="form-control" id="inputMarca">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputCategoria" class="form-label">Categoria:</label>
+                        <input type="text" class="form-control" id="inputCategoria">
+                    </div>
+
+                    <div class="col-md-1">
+                        <label for="inputPrecio" class="form-label">Precio:</label>
+                        <input type="text" class="form-control" id="inputPrecio">
+                    </div>
+
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                    </div>
+                </form>
+
+            </section>
+
+
+            <!-- Productos ingresados -->
+
+            <h4 class="py-2 mt-4">Lista de productos ingresados</h4>
+            <section class="p-3 seccion-index mx-auto">
+                <div class="row listado lista-titulos">
+                    <div class="col-1 border py-2">
+                        ID
+                    </div>
+                    <div class="col-4 border py-2">
+                        Descripción
+                    </div>
+                    <div class="col-3 border py-2">
+                        Marca
+                    </div>
+                    <div class="col-3 border py-2">
+                        Categoria
+                    </div>
+                    <div class="col-1 border py-2">
+                        Precio
                     </div>
                 </div>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p4.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Frenos de Disco 150mm</h4>
-                            <h5>Frenos</h5>
-                            <p class="card-text text-center">$1200</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+                <div class="row listado">
+                    <div class="col-1 border">
+                        001
+                    </div>
+                    <div class="col-4 border">
+                        Producto 1
+                    </div>
+                    <div class="col-3 border">
+                        Producto 1
+                    </div>
+                    <div class="col-3 border">
+                        Producto 1
+                    </div>
+                    <div class="col-1 border">
+                        100
                     </div>
                 </div>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p9.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Batería de 45amp</h4>
-                            <h5>Baterias</h5>
-                            <p class="card-text text-center">$4800</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+                <div class="row listado">
+                    <div class="col-1 border">
+                        002
+                    </div>
+                    <div class="col-4 border">
+                        Producto 2
+                    </div>
+                    <div class="col-3 border">
+                        Producto 2
+                    </div>
+                    <div class="col-3 border">
+                        Producto 2
+                    </div>
+                    <div class="col-1 border">
+                        150
                     </div>
                 </div>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+                <div class="row listado">
+                    <div class="col-1 border">
+                        003
+                    </div>
+                    <div class="col-4 border">
+                        Producto 3
+                    </div>
+                    <div class="col-3 border">
+                        Producto 3
+                    </div>
+                    <div class="col-3 border">
+                        Producto 3
+                    </div>
+                    <div class="col-1 border">
+                        350
                     </div>
                 </div>
+            </section>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p3.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Neumático Michelín Rodado 13</h4>
-                            <h5>Neumáticos</h5>
-                            <p class="card-text text-center">$5600</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+            <!-- Ordenar productos -->
+
+            <h4 class="py-2 mt-4">Ordenar productos</h4>
+
+            <section class="p-3 seccion-index mx-auto">
+                <form class="row g-3 pb-2 listado">
+
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Precio (menor a mayor)</button>
                     </div>
-                </div>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p9.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Batería de 45amp</h4>
-                            <h5>Baterias</h5>
-                            <p class="card-text text-center">$4800</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Categoria</button>
                     </div>
-                </div>
+                </form>
+            </section>
 
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p4.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Frenos de Disco 150mm</h4>
-                            <h5>Frenos</h5>
-                            <p class="card-text text-center">$1200</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p3.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Neumático Michelín Rodado 13</h4>
-                            <h5>Neumáticos</h5>
-                            <p class="card-text text-center">$5600</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="./Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
-                        <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
     </main>
 
     <!-- FOOTER -->
