@@ -40,6 +40,10 @@
 
 //INDEX
 
+#estado {
+    font-size: 0.8rem;
+}
+
 .seccion-index {
     @include filaPropiedades(90%, true);
 }

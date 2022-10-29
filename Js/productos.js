@@ -1,161 +1,205 @@
-const listaProductos = []
-const listaCategoria = ['Frenos', 'Neumaticos', 'Baterias', 'Limpieza']
+let listaProductos = []
+let listaStorage = JSON.parse(localStorage.getItem("listaProductos"))
+const listaCategoria = ['Frenos', 'Neumáticos', 'Baterias', 'Limpieza']
+
+//Cargar listaProdcutos desde LS
+if (listaStorage != null) {
+    listaProductos = listaStorage.splice(0, listaStorage.length)
+    actualizarLista(listaProductos)
+}
+
 
 //Clase Producto
 class Producto {
-    constructor(categoria, id, marca, precio) {
-        this.categoria = categoria;
+    constructor(id, descripcion, marca, categoria, precio) {
         this.id = id;
+        this.descripcion = descripcion;
         this.marca = marca;
+        this.categoria = categoria;
         this.precio = precio;
     }
-
-    //Nuevo Producto
-    nuevoProducto() {
-        let control = false;
-        while (!control) {
-            let opcion = prompt('Ingresar datos del Producto \n \nSelecione una categoría de la lista: \n\n' + mostrarCategorias(listaCategoria));
-            switch (opcion) {
-                case '1':
-                    this.categoria = 0;
-                    control = true;
-                    break
-
-                case '2':
-                    this.categoria = 1;
-                    control = true;
-                    break
-
-                case '3':
-                    this.categoria = 2;
-                    control = true;
-                    break
-
-                case '4':
-                    this.categoria = 3;
-                    control = true;
-                    break
-
-                default:
-                    alert("El valor ingresado es incorrecto")
-                    control = false;
-            }
-        }
-
-        this.id = validarID(listaProductos)
-        this.marca = validarTexto('marca')
-        this.precio = validarNumero('precio')
-
-        let producto = new Producto(this.categoria, this.id, this.marca, this.precio);
-        return producto;
-    }
-}
-
-//Menú Principal
-function menuPrincipal() {
-    let seguirComprando = true;
-    while (seguirComprando) {
-        let opcion = prompt('Bienvenidos a Autorrepuestos Atlántida, que le gustaría hacer: \n \n 1-Ingresar un Producto \n 2-Ver productos Ingresados \n 3-Ordenar Productos \n 4-Eliminar un producto \n 5-Salir')
-        switch (opcion) {
-            case '1':
-                agregarProducto(listaProductos)
-                break
-
-            case '2':
-                mostrarProductos(listaProductos)
-                break
-
-            case '3':
-                ordenarProductos(listaProductos)
-                break
-
-            case '4':
-                eliminarProducto(listaProductos)
-                break
-
-            case '5':
-                seguirComprando = false;
-                break
-        }
-    }
-}
-
-//Agregar Producto
-function agregarProducto(lista) {
-    let producto = new Producto()
-    lista.push(producto.nuevoProducto());
-    alert('Producto agregado correctamente!')
 }
 
 //Mostrar Categorías
-function mostrarCategorias(lista) {
-    let resultado = ''
-    lista.forEach((elemento, index) => {
-        resultado += (index + 1) + '- ' + elemento + '\n'
-    })
-    return resultado;
-}
+listaCategoria.forEach((item) => {
+    let option = document.createElement("option")
+    option.innerText = item
+    let ubicacionCategoria = document.getElementById("categoria")
+    ubicacionCategoria.appendChild(option)
+})
 
-//Mostrar lista de Productos 
-function mostrarProductos(lista) {
-    if (lista.length >= 1) {
-        let resultado = ''
-        let total = 0;
-        lista.forEach((elemento, index) => {
-            resultado += 'Producto ' + (index + 1) + ':\n\n' + 'ID: ' + elemento.id + '\n' +
-                'Marca: ' + elemento.marca + '\n' +
-                'Categoria: ' + listaCategoria[elemento.categoria] + '\n' +
-                'Precio: $ ' + elemento.precio + '\n \n'
-            total += parseInt(elemento.precio);
-        })
-        resultado = resultado + 'Total: $' + total;
-        alert(resultado);
-    } else {
-        alert('No hay productos ingresados!')
+
+//Agregar Producto
+let formulario = document.getElementById("form")
+formulario.addEventListener("submit", agregarProductoLista)
+
+function agregarProductoLista(evento) {
+    evento.preventDefault()
+    let id = document.getElementById("inputID").value
+    let descripcion = document.getElementById("inputDescripcion").value
+    let marca = document.getElementById("inputMarca").value
+    let categoria = document.getElementById("categoria").value
+    let precio = document.getElementById("inputPrecio").value
+
+    formulario.onmouseenter = () => {
+        document.getElementById("estado").value = ("")
     }
-}
+
+    //Validación de número
+    if (validarNumero(precio) && validarNumero(id) && valorUnico(listaProductos, id)) {
+        let producto = new Producto(parseInt(id), descripcion, marca, categoria, parseInt(precio))
+        listaProductos.push(producto)
+        localStorage.setItem("listaProductos", JSON.stringify(listaProductos))
+
+        document.getElementById("estado").style.color = '#006600'
+        document.getElementById("estado").value = ("PRODUCTO INGRESADO")
 
 
-//Menú ordenar productos:
-function ordenarProductos(lista) {
-    if (lista.length >= 1) {
-        let opcion = prompt('Elija el criterio por el cual le gustaría ordenar: \n \n 1- Ordenar por precio (de menor a mayor) \n 2- Ordenar por categoria \n')
-        switch (opcion) {
-            case '1':
-                mostrarProductos(ordenarPorPrecio(listaProductos))
-                break
+        let posicion = listaProductos.indexOf(producto)
 
-            case '2':
-                mostrarProductos(ordenarPorCategoria(listaProductos))
-                break
+        let fila = document.createElement("tr")
+        let tabla = document.getElementById("tabla")
 
-            case '3':
-                break
+        let td = document.createElement("td")
+        td.innerText = producto.id
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.descripcion
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.marca
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.categoria
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.precio
+        fila.append(td)
+
+        let botonEliminar = document.createElement("button")
+        botonEliminar.innerText = "eliminar"
+        botonEliminar.className = "btn btn-danger"
+
+        botonEliminar.onclick = () => {
+            listaProductos.splice(posicion, 1)
+            localStorage.setItem("listaProductos", JSON.stringify(listaProductos))
+            actualizarLista(listaProductos)
         }
-    } else {
-        alert('No hay productos ingresados!')
+
+        td = document.createElement("td")
+        td.append(botonEliminar)
+        fila.append(td)
+
+        tabla.append(fila)
+        formulario.reset()
+
     }
+}
+
+//Actualizar Lista
+function actualizarLista(lista) {
+    document.getElementById("tabla").innerText = ""
+
+    lista.forEach((producto) => {
+        let pos = lista.indexOf(producto)
+        let tabla = document.getElementById("tabla")
+        let fila = document.createElement("tr")
+
+        let td = document.createElement("td")
+        td.innerText = producto.id
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.descripcion
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.marca
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.categoria
+        fila.append(td)
+
+        td = document.createElement("td")
+        td.innerText = producto.precio
+        fila.append(td)
+
+        let botonEliminar = document.createElement("button")
+        botonEliminar.innerText = "eliminar"
+        botonEliminar.className = "btn btn-danger"
+
+        botonEliminar.onclick = () => {
+            lista.splice(pos, 1)
+            localStorage.setItem("listaProductos", JSON.stringify(lista))
+            actualizarLista(lista)
+        }
+
+        td = document.createElement("td")
+        td.append(botonEliminar)
+        fila.append(td)
+
+        tabla.append(fila)
+    })
+}
+
+// Validar Ingreso de Número
+function validarNumero(valor) {
+    let validar = isNaN(valor)
+    if (validar) {
+        document.getElementById("estado").style.color = 'rgb(102, 4, 4)'
+        document.getElementById("estado").value = ("Debes ingresar un número," + ' " ' + valor + ' " ' + "no es un valor correcto!")
+        return false;
+    } else {
+        return true;
+    }
+}
+
+//Validar ID Único
+function valorUnico(lista, numero) {
+    let unico = true;
+    if (lista.length >= 1) {
+        lista.forEach(item => {
+            if (item.id == numero) {
+                unico = false;
+                document.getElementById("estado").style.color = 'rgb(102, 4, 4)'
+                document.getElementById("estado").value = ("El ID " + numero + " ya se encuentra en uso, debe usar un valor diferente!")
+            }
+        })
+    }
+    return unico;
 }
 
 //Ordenar por precio
-function ordenarPorPrecio(lista) {
-    const arrayPorPrecio = lista.slice();
-    arrayPorPrecio.sort((a, b) => {
-        if (a.precio > b.precio) {
+let botonPrecio = document.getElementById("btn-precio")
+botonPrecio.addEventListener("click", ordenarPorPrecio)
+
+function ordenarPorPrecio(evento) {
+    evento.preventDefault()
+    listaProductos.sort((a, b) => {
+        if (parseInt(a.precio) > parseInt(b.precio)) {
             return 1;
-        } else if (a.precio < b.precio) {
+        } else if (parseInt(a.precio) < parseInt(b.precio)) {
             return -1;
         } else {
             return 0;
         }
     })
-    return arrayPorPrecio;
+    actualizarLista(listaProductos)
 }
 
+
 //Ordenar por Categoría
-function ordenarPorCategoria(lista) {
-    const arrayPorCategoria = lista.slice();
-    arrayPorCategoria.sort((a, b) => {
+let botonCategoria = document.getElementById("btn-categoria")
+botonCategoria.addEventListener("click", ordenarPorCat)
+
+function ordenarPorCat(evento) {
+    evento.preventDefault()
+    listaProductos.sort((a, b) => {
         if (a.categoria > b.categoria) {
             return 1;
         } else if (a.categoria < b.categoria) {
@@ -164,134 +208,20 @@ function ordenarPorCategoria(lista) {
             return 0;
         }
     })
-    return arrayPorCategoria;
+    actualizarLista(listaProductos)
+}
+
+//Vaciar Lista
+let botonVaciar = document.getElementById("btn-vaciarCarrito")
+botonVaciar.addEventListener("click", vaciarLista)
+
+function vaciarLista(e) {
+    e.preventDefault()
+    listaProductos.splice(0, listaProductos.length)
+    localStorage.setItem("listaProductos", JSON.stringify(listaProductos))
+    actualizarLista(listaProductos)
+
 }
 
 
-//Buscar producto
-function buscarProducto(lista, valor) {
-    return lista.find((elemento) =>
-        elemento.id == valor
-    )
-}
 
-//Eliminar un producto
-function eliminarProducto(lista) {
-    if (lista.length >= 1) {
-        let resultado = ''
-        lista.forEach((elemento, index) => {
-            resultado += 'Producto ' + (index + 1) + ':\n' + 'Marca: ' + elemento.marca + ' - Precio: $ ' + elemento.precio + ' - Cat: ' + listaCategoria[elemento.categoria] + ' - ID: ' + elemento.id + '\n \n'
-        })
-        let opcion = prompt('¿Qué producto desea eliminar? \n \n' + resultado + '(Ingrese el ID del producto a eliminar)')
-        let continuar = true;
-
-        let producto = buscarProducto(listaProductos, opcion);
-
-        while (continuar) {
-            if (producto != undefined) {
-                let valor = (prompt('¿Desea eliminar este producto? \n\n Marca: ' + producto.marca + ' - Precio: $ ' + producto.precio + ' - ID: ' + producto.id + '\n\n ** Ingresar SI / NO **')).toUpperCase()
-                if (valor == 'SI') {
-                    lista.splice(lista.indexOf(producto), 1);
-                    alert("Producto eliminado correctamente!")
-                    if (lista.length >= 1) {
-                        mostrarProductos(lista)
-                    }
-                    continuar = false;
-
-                } else if (valor == 'NO') {
-                    continuar = false;
-                    alert('NO se ha eliminado el producto con ID: ' + opcion)
-
-                } else {
-                    alert('Debe ingresar una opcion correcta!')
-                }
-
-            } else {
-                alert("El producto con ID: " + opcion + ' no existe!')
-                continuar = false;
-            }
-        }
-
-    } else {
-        alert('No hay productos ingresados!')
-    }
-}
-
-
-//VALIDAR TEXTO:
-function validarTexto(item) {
-    let resultado = true;
-    let texto;
-    while (resultado) {
-        texto = prompt('Ingrese la ' + item + ' de su producto')
-        if (campoVacio(texto)) {
-            alert('Debes ingresar una ' + item + '!')
-        } else {
-            resultado = false;
-        }
-    }
-    return texto;
-}
-
-
-// VALIDAR INGRESO DE NÚMERO
-function validarNumero(item) {
-    let resultado = true;
-    let numero;
-    while (resultado) {
-        numero = prompt('Ingrese el ' + item + ' de su producto:')
-        resultado = isNaN(numero)
-        if (resultado || campoVacio(numero)) {
-            alert("Debes ingresar un número," + ' " ' + numero + ' " ' + " no es un valor correcto!")
-            resultado = true;
-        } else {
-            resultado = false;
-        }
-    }
-    return parseInt(numero);
-}
-
-// VALIDAR ID
-function validarID(lista) {
-    let resultado = true;
-    let numero;
-    while (resultado) {
-        numero = prompt('Ingrese el ID de su producto:')
-        resultado = isNaN(numero)
-        if (resultado || campoVacio(numero)) {
-            alert("Debes ingresar un número," + ' " ' + numero + ' " ' + " no es un valor correcto!")
-            resultado = true;
-        } else if (!valorUnico(lista, numero)) {
-            alert("Debes ingresar un número único. El ID: " + numero + " ya existe!")
-            resultado = true;
-        } else {
-            resultado = false;
-        }
-    }
-    return parseInt(numero);
-}
-
-//VALIDAR ID ÚNICO
-function valorUnico(lista, numero) {
-    let unico = true;
-    if (lista.length >= 1) {
-        lista.forEach(item => {
-            if (item.id == numero) {
-                unico = false;
-            }
-        })
-    }
-    return unico;
-}
-
-//CAMPO VACIO
-function campoVacio(dato) {
-    if (dato == '') {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-menuPrincipal()

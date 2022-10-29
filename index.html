@@ -17,6 +17,10 @@
     <!-- Fuente de Letra -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
+    <!-- <script src="./Js/productos.js"></script> -->
+
+
+
     <title>Autorrepuestos Atlántida / Inicio</title>
 </head>
 
@@ -101,131 +105,85 @@
             <h4 class="py-3 mt-3">Ingresar un producto</h4>
             <section class="border p-3 seccion-index mx-auto">
 
-                <form class="row g-3 fila-form pb-2">
+                <form id="form" class="row g-3 fila-form pb-2">
 
                     <div class="col-md-1">
                         <label for="inputID" class="form-label">ID:</label>
-                        <input type="text" class="form-control" id="inputID">
+                        <input type="text" class="form-control" id="inputID" required>
                     </div>
 
                     <div class="col-md-4">
                         <label for="inputDescripcion" class="form-label">Descripción:</label>
-                        <input type="text" class="form-control" id="inputDescripcion">
+                        <input type="text" class="form-control" id="inputDescripcion" required>
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputMarca" class="form-label">Marca:</label>
-                        <input type="text" class="form-control" id="inputMarca">
+                        <input type="text" class="form-control" id="inputMarca" required>
                     </div>
 
                     <div class="col-md-2">
-                        <label for="inputCategoria" class="form-label">Categoria:</label>
-                        <input type="text" class="form-control" id="inputCategoria">
+                        <label for="categoria" class="form-label">Categoría</label>
+                        <select id="categoria" class="form-control" required>
+                            <option value="">Elegir una opción</option>
+                        </select>
                     </div>
 
                     <div class="col-md-1">
                         <label for="inputPrecio" class="form-label">Precio:</label>
-                        <input type="text" class="form-control" id="inputPrecio">
+                        <input type="text" class="form-control" id="inputPrecio" required>
                     </div>
 
                     <div class="col-2">
-                        <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                        <button id="boton" type="submit" class="btn btn-primary">Agregar Producto</button>
                     </div>
                 </form>
 
             </section>
 
 
-            <!-- Productos ingresados -->
-
-            <h4 class="py-2 mt-4">Lista de productos ingresados</h4>
-            <section class="p-3 seccion-index mx-auto">
-                <div class="row listado lista-titulos">
-                    <div class="col-1 border py-2">
-                        ID
-                    </div>
-                    <div class="col-4 border py-2">
-                        Descripción
-                    </div>
-                    <div class="col-3 border py-2">
-                        Marca
-                    </div>
-                    <div class="col-3 border py-2">
-                        Categoria
-                    </div>
-                    <div class="col-1 border py-2">
-                        Precio
-                    </div>
-                </div>
-
-                <div class="row listado">
-                    <div class="col-1 border">
-                        001
-                    </div>
-                    <div class="col-4 border">
-                        Producto 1
-                    </div>
-                    <div class="col-3 border">
-                        Producto 1
-                    </div>
-                    <div class="col-3 border">
-                        Producto 1
-                    </div>
-                    <div class="col-1 border">
-                        100
-                    </div>
-                </div>
-
-                <div class="row listado">
-                    <div class="col-1 border">
-                        002
-                    </div>
-                    <div class="col-4 border">
-                        Producto 2
-                    </div>
-                    <div class="col-3 border">
-                        Producto 2
-                    </div>
-                    <div class="col-3 border">
-                        Producto 2
-                    </div>
-                    <div class="col-1 border">
-                        150
-                    </div>
-                </div>
-
-                <div class="row listado">
-                    <div class="col-1 border">
-                        003
-                    </div>
-                    <div class="col-4 border">
-                        Producto 3
-                    </div>
-                    <div class="col-3 border">
-                        Producto 3
-                    </div>
-                    <div class="col-3 border">
-                        Producto 3
-                    </div>
-                    <div class="col-1 border">
-                        350
-                    </div>
+            <!-- Estado -->
+            <h5 class="mt-3 mb-1">Estado</h5>
+            <section class="seccion-index mx-auto">
+                <div class="col-md-7 mx-auto">
+                    <input type="text" class="form-control text-center" id="estado" readonly>
                 </div>
             </section>
 
+            <!-- Productos ingresados -->
+
+            <h4 class="py-2 mt-3 mb-3">Lista de productos ingresados</h4>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Operacion</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla">
+                </tbody>
+            </table>
+
             <!-- Ordenar productos -->
 
-            <h4 class="py-2 mt-4">Ordenar productos</h4>
+            <h4 class="py-2 mt-4">Acciones</h4>
 
             <section class="p-3 seccion-index mx-auto">
                 <form class="row g-3 pb-2 listado">
 
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary">Precio (menor a mayor)</button>
+                        <button id="btn-vaciarCarrito" type="submit" class="btn btn-primary">Vaciar Lista</button>
                     </div>
-
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary">Categoria</button>
+                        <button id="btn-precio" type="submit" class="btn btn-primary">Ordenar por Precio</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="btn-categoria" type="submit" class="btn btn-primary">Ordenar por Categoria</button>
                     </div>
                 </form>
             </section>
