@@ -16,11 +16,6 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- Fuente de Letra -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
-
-    <!-- <script src="./Js/productos.js"></script> -->
-
-
-
     <title>Autorrepuestos Atlántida / Inicio</title>
 </head>
 
@@ -29,17 +24,10 @@
     <header>
         <section class="container-fluid text-center g-0">
             <div class="row fila-header mx-auto p-2">
-
                 <div class="col-12 col-lg-11">
                     <nav class="navbar navbar-expand-sm navbar-dark">
 
                         <div class="container-fluid boxNav g-0">
-
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
 
                             <div class="boxNav collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav w-100">
@@ -56,10 +44,17 @@
                                         <a href="./paginas/baterias.html">Baterías</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./paginas/limpieza.html">Productos de Limpieza</a>
+                                        <a href="./paginas/limpieza.html">Limpieza</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="./paginas/contacto.html">Contacto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="box-carrito">
+                                            <img src="./Imagenes/carrito2.png" alt="carrito" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                                id="carrito">
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -70,7 +65,83 @@
         </section>
     </header>
 
+
     <main>
+        <!-- Carrito -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header text-center">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <!-- Lista de productos en carrito -->
+                <div class="row">
+                    <div class="col-9 mx-auto">
+                        <div class="py-2 text-center">
+                            <h4 class="mb-1">Frenos de Disco 150mm</h4>
+                            <h5>Frenos</h5>
+                            <div class="box-imgCarrito">
+                                <img src="./Imagenes/p4.jpg" class="carrito-img" alt="img-carrito">
+                            </div>
+                            <h6>Cantidad</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-9 mx-auto">
+                        <div class="py-2 text-center">
+                            <h4 class="mb-1">Frenos de Disco 150mm</h4>
+                            <h5>Frenos</h5>
+                            <div class="box-imgCarrito">
+                                <img src="./Imagenes/p3.jpg" class="carrito-img" alt="img-carrito">
+                            </div>
+                            <h6>Cantidad</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-9 mx-auto">
+                        <div class="py-2 text-center">
+                            <h4 class="mb-1">Frenos de Disco 150mm</h4>
+                            <h5>Frenos</h5>
+                            <div class="box-imgCarrito">
+                                <img src="./Imagenes/p9.jpg" class="carrito-img" alt="img-carrito">
+                            </div>
+                            <h6>Cantidad</h6>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Operacion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         <!-- Carousel -->
         <div class="mt-xl-4 carouselBox">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">

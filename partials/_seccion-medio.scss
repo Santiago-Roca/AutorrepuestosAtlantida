@@ -38,6 +38,23 @@
     }
 }
 
+//Carrito
+.offcanvas,
+.offcanvas-end {
+    top: 73px !important;
+}
+
+.box-imgCarrito {
+    height: 200px;
+}
+
+.carrito-img {
+    border-radius: 20px;
+    width: 90%;
+    height: 180px;
+    object-fit: cover;
+}
+
 //INDEX
 
 #estado {

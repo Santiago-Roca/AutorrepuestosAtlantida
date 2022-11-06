@@ -2,7 +2,7 @@ let listaProductos = []
 let listaStorage = JSON.parse(localStorage.getItem("listaProductos"))
 const listaCategoria = ['Frenos', 'Neumáticos', 'Baterias', 'Limpieza']
 
-//Cargar listaProdcutos desde LS
+//Cargar Lista productos desde LS
 if (listaStorage != null) {
     listaProductos = listaStorage.splice(0, listaStorage.length)
     actualizarLista(listaProductos)

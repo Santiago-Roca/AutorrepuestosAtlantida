@@ -25,6 +25,19 @@ header {
     .fila-header {
         justify-content: center;
     }
+
+    .navbar-nav{
+        align-items: center;
+    }
+}
+
+.box-carrito {
+    height: 33px;
+    width: 100px;
+
+    img {
+        @extend %imagenContain;
+    }
 }
 
 @media screen and (min-width: 992px) {

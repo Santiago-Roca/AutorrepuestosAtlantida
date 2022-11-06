@@ -13,7 +13,7 @@
 
 .box-redes .box-twitter img,
 .box-redes .box-instagram img,
-.box-redes .box-facebook img {
+.box-redes .box-facebook img, .box-carrito img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -44,7 +44,14 @@ header nav ul li a:hover {
 header .fila-header {
   justify-content: center;
 }
+header .navbar-nav {
+  align-items: center;
+}
 
+.box-carrito {
+  height: 33px;
+  width: 100px;
+}
 @media screen and (min-width: 992px) {
   header {
     position: -webkit-sticky;
@@ -82,6 +89,23 @@ header .fila-header {
     font-size: 2.3rem;
   }
 }
+.offcanvas,
+.offcanvas-end {
+  top: 73px !important;
+}
+
+.box-imgCarrito {
+  height: 200px;
+}
+
+.carrito-img {
+  border-radius: 20px;
+  width: 90%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #estado {
   font-size: 0.8rem;
 }
