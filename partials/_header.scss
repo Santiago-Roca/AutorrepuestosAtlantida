@@ -8,7 +8,7 @@ header {
 
         li {
             font-family: map-get($estilos, fuentePrincipal);
-            animation: botones 1.5s ease 3s 1 normal forwards;
+            // animation: botones 1.5s ease 3s 1 normal forwards;
 
             a {
                 text-decoration: none;
@@ -24,11 +24,17 @@ header {
 
     .fila-header {
         justify-content: center;
+        align-items: center;
+        height: 64px;
     }
 
-    .navbar-nav{
+    .navbar-nav {
         align-items: center;
     }
+}
+
+#logo-carrito{
+    cursor: pointer;
 }
 
 .box-carrito {
@@ -39,6 +45,22 @@ header {
         @extend %imagenContain;
     }
 }
+
+#temp-valor {
+    color: white;
+    font-size: 1rem;
+}
+
+#temp-ubicacion {
+    color: white;
+    font-size: 1rem;
+}
+
+// #icono-animado{
+//     width: 100px;
+//     height: 100px;
+//     background-color: white;
+// }
 
 @media screen and (min-width: 992px) {
     header {

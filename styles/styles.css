@@ -30,8 +30,6 @@ header nav ul {
 }
 header nav ul li {
   font-family: "Jost", sans-serif;
-  -webkit-animation: botones 1.5s ease 3s 1 normal forwards;
-          animation: botones 1.5s ease 3s 1 normal forwards;
 }
 header nav ul li a {
   text-decoration: none;
@@ -43,15 +41,31 @@ header nav ul li a:hover {
 }
 header .fila-header {
   justify-content: center;
+  align-items: center;
+  height: 64px;
 }
 header .navbar-nav {
   align-items: center;
+}
+
+#logo-carrito {
+  cursor: pointer;
 }
 
 .box-carrito {
   height: 33px;
   width: 100px;
 }
+#temp-valor {
+  color: white;
+  font-size: 1rem;
+}
+
+#temp-ubicacion {
+  color: white;
+  font-size: 1rem;
+}
+
 @media screen and (min-width: 992px) {
   header {
     position: -webkit-sticky;
@@ -91,7 +105,11 @@ header .navbar-nav {
 }
 .offcanvas,
 .offcanvas-end {
-  top: 73px !important;
+  top: 65px !important;
+}
+
+.offcanvas {
+  width: 470px !important;
 }
 
 .box-imgCarrito {
@@ -99,11 +117,45 @@ header .navbar-nav {
 }
 
 .carrito-img {
-  border-radius: 20px;
-  width: 90%;
+  border-radius: 30px;
+  width: 80%;
   height: 180px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.fila-pagina-carrito {
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+}
+
+.fila-carrito {
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem;
+  margin: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #14503c, #237a57);
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #237a57, #209969);
+  color: #fff;
+}
+
+.btn-eliminar {
+  width: 80px;
+}
+
+.btn-ordenar {
+  width: 195px;
 }
 
 #estado {
@@ -129,8 +181,7 @@ header .navbar-nav {
 }
 
 .menu {
-  border: 2px solid #464852;
-  width: 85%;
+  width: 90%;
 }
 
 .imagenCard {

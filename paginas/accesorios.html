@@ -7,55 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Autorrespuestos Atlántida, todos los repuestos que tu vehículo necesita al alcance de tu mano.">
-    <meta name="keywords" content="autorrepuestos, repuestos, repuestos vehículo, repuestos atlantida">
 
     <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- CSS Propio -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- CSS Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Fuente de Letra -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
-    <title>Autorrepuestos Atlántida / Productos de Limpieza</title>
+    <title>Accesorios / Autorrepuestos Atlántida</title>
 </head>
 
 <body>
+
     <!-- HEADER-->
     <header>
         <section class="container-fluid text-center g-0">
-            <div class="row fila-header mx-auto p-2">
-
+            <div class="row fila-header mx-auto g-0">
                 <div class="col-12 col-lg-11">
-                    <nav class="navbar navbar-expand-sm navbar-dark">
+                    <nav class="navbar navbar-expand-sm navbar-dark py-0">
 
                         <div class="container-fluid boxNav g-0">
-
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
 
                             <div class="boxNav collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav w-100">
                                     <li class="nav-item">
-                                        <a href="../index.html">Menú Principal</a>
+                                        <a href="../index.html">Productos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./frenos.html">Frenos</a>
+                                        <a href="../paginas/frenos.html">Frenos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./neumaticos.html">Neumáticos</a>
+                                        <a href="../paginas/neumaticos.html">Neumáticos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./baterias.html">Baterías</a>
+                                        <a href="../paginas/accesorios.html">Accesorios</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./limpieza.html">Productos de Limpieza</a>
+                                        <a id="contacto-page" href="../paginas/contacto.html">Contacto</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./contacto.html">Contacto</a>
+                                        <div class="box-carrito">
+                                            <img id="logo-carrito" src="../Imagenes/carrito2.png" alt="carrito"
+                                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                                aria-controls="offcanvasRight" id="carrito">
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h1 class="mb-0" id="temp-valor"></h1>
+                                        <h2 class="mb-0" id="temp-ubicacion"></h2>
+                                    </li>
+                                    <li class="nav-item">
+                                        <img id="icono-animado" src="">
                                     </li>
                                 </ul>
                             </div>
@@ -67,87 +73,102 @@
     </header>
 
     <main>
+        <!-- Carrito -->
+        <div class="offcanvas offcanvas-end text-bg-dark text-center" data-bs-scroll="true" tabindex="-1"
+            id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header mx-auto">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
+            </div>
+
+            <!-- Lista de productos en carrito -->
+            <div class="offcanvas-body">
+                <div id="lista-carrito" class="row">
+
+                </div>
+            </div>
+        </div>
+
         <!-- SECCION MEDIO  -->
-        <section class="container seccion-medio mt-md-3 text-center gx-0">
+        <section id="lista-productos" class="container seccion-medio mt-md-3 text-center gx-0">
 
-            <h1 class="pt-4 pt-md-3 pb-3 pb-md-3 pb-lg-0 pb-xl-4">Productos de Limpieza</h1>
-
+            <h1 class="pt-4 pt-md-3 pb-3 pb-md-3 pb-lg-0 pb-xl-4">Accesorios</h1>
             <div class="row g-5 mb-5">
+
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="bat-1" class="card card-box">
+                        <img src="../IMG/Accesorios/b1.jpg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h4 class="card-title">Batería de 45amp</h4>
+                            <h5 class="card-category">Baterias</h5>
+                            <p class="card-text text-center card-price">$4800</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="limp-1" class="card card-box">
+                        <img src="../IMG/Accesorios/l2.jpg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
                             <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h5 class="card-category">Accesorios</h5>
+                            <p class="card-text text-center card-price">$490</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="bat-2" class="card card-box">
+                        <img src="../IMG/Accesorios/b2.jpeg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h4 class="card-title">Batería de 60amp</h4>
+                            <h5 class="card-category">Baterias</h5>
+                            <p class="card-text text-center card-price">$6200</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="kit-1" class="card card-box">
+                        <img src="../IMG/Accesorios/l1.jpg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h4 class="card-title">Kit Detailing</h4>
+                            <h5 class="card-category">Accesorios</h5>
+                            <p class="card-text text-center card-price">$790</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="lubri-1" class="card card-box">
+                        <img src="../IMG/Accesorios/aceite.jpg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h4 class="card-title">Aceite Total 0w-30</h4>
+                            <h5 class="card-category">Accesorios</h5>
+                            <p class="card-text text-center card-price">$4400</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="card card-box">
-                        <img src="../Imagenes/p8.jpg" class="card-img-top imagenCard" alt="...">
+                    <div id="fil-1" class="card card-box">
+                        <img src="../IMG/Accesorios/filtros.jpg" class="card-img-top imagenCard card-img" alt="img-card">
                         <div class="card-body py-2">
-                            <h4 class="card-title">Shampoo y Cera</h4>
-                            <h5>Limpieza</h5>
-                            <p class="card-text text-center">$490</p>
-                            <a href="#" class="btn btn-primary mt-3">Agregar al carrito</a>
+                            <h4 class="card-title">Filtros Completos</h4>
+                            <h5 class="card-category">Accesorios</h5>
+                            <p class="card-text text-center card-price">$3700</p>
+                            <button class="btn mt-3 card-producto">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -209,6 +230,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+
+    <!-- JavaScript Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>
 

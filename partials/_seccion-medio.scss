@@ -41,7 +41,11 @@
 //Carrito
 .offcanvas,
 .offcanvas-end {
-    top: 73px !important;
+    top: 65px !important;
+}
+
+.offcanvas {
+    width: 470px !important;
 }
 
 .box-imgCarrito {
@@ -49,10 +53,46 @@
 }
 
 .carrito-img {
-    border-radius: 20px;
-    width: 90%;
+    border-radius: 30px;
+    width: 80%;
     height: 180px;
     object-fit: cover;
+
+}
+
+.fila-pagina-carrito{
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+}
+
+.fila-carrito{
+    justify-content: center;
+}
+
+.btn{
+    padding: .8rem;
+    margin: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(90deg,#14503c,#237a57);
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        background: linear-gradient(90deg,#237a57,#209969);
+        color: #fff;
+    }
+}
+
+.btn-eliminar{
+    width: 80px;
+}
+
+.btn-ordenar{
+    width: 195px;
 }
 
 //INDEX
@@ -79,8 +119,8 @@
 }
 
 .menu {
-    border: 2px solid #464852;
-    width: 85%;
+    // border: 2px solid #464852;
+    width: 90%;
 }
 
 .imagenCard {
