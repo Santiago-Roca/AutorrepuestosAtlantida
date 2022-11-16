@@ -51,7 +51,7 @@ function agregarProductoCarrito(evento) {
         Toastify({
             text: "Producto agregado",
             duration: 1000,
-            destination: "/ProyectoJava/paginas/carrito.html",
+            destination: "https://santigti.github.io/AutorrepuestosAtlantida/paginas/carrito.html",
             newWindow: false,
             close: true,
             gravity: "top",
@@ -138,17 +138,17 @@ function actualizarCarrito() {
         const filaSegunda = document.createElement('div')
         filaSegunda.innerHTML =
             `<h6 id="precio-total" class="text-center precio-total">Precio Total: $${total}</h6>
-            <a class="btn" href="/ProyectoJava/paginas/carrito.html">Ir al carrito</a>`
+            <a class="btn" href="https://santigti.github.io/AutorrepuestosAtlantida/paginas/carrito.html">Ir al carrito</a>`
         listado.append(filaSegunda)
 
         localStorage.setItem("carrito", JSON.stringify(carrito))
 
         //Cambiar logo del carrito
-        logoCarrito.src = "/ProyectoJava/Imagenes/carrito4.png"
+        logoCarrito.src = "https://github.com/santiGTI/AutorrepuestosAtlantida/blob/main/Imagenes/carrito4.png?raw=true"
         animarLogo()
 
     } else {
-        logoCarrito.src = "/ProyectoJava/Imagenes/carrito2.png"
+        logoCarrito.src = "https://github.com/santiGTI/AutorrepuestosAtlantida/blob/main/Imagenes/carrito2.png?raw=true"
     }
 }
 
@@ -227,30 +227,28 @@ window.addEventListener("load", () => {
                     //Selección de icono
                     switch (data.weather[0].main) {
                         case 'Thunderstorm':
-                            icono.src = './IconosTiempo/animated/thunder.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/thunder.svg'
                             break;
                         case 'Drizzle':
-                            icono.src = './IconosTiempo/animated/rainy-2.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/rainy-2.svg'
                             break;
                         case 'Rain':
-                            icono.src = './IconosTiempo/animated/rainy-7.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/rainy-7.svg'
                             break;
                         case 'Snow':
-                            icono.src = './IconosTiempo/animated/snowy-6.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/snowy-6.svg'
                             break;
                         case 'Clear':
-                            icono.src = '/ProyectoJava/IconosTiempo/animated/day.svg'
-
-                            // icono.src = './IconosTiempo/animated/day.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/day.svg'
                             break;
                         case 'Atmosphere':
-                            icono.src = './IconosTiempo/animated/weather.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/weather.svg'
                             break;
                         case 'Clouds':
-                            icono.src = './IconosTiempo/animated/cloudy-day-1.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/cloudy-day-1.svg'
                             break;
                         default:
-                            icono.src = './IconosTiempo/animated/cloudy-day-1.svg'
+                            icono.src = 'https://raw.githubusercontent.com/santiGTI/AutorrepuestosAtlantida/6d369aa4c4ed958f4e69abe63c32d782e4f85f6e/IconosTiempo/animated/cloudy-day-1.svg'
                     }
 
                 })
